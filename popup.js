@@ -1,23 +1,15 @@
 // Xoá phần tử read-only trên web học 
 // Tạo button
-var btn = document.createElement("BUTTON");
-// removeReadOnly
+const button = document.createElement("button");
+button.innerHTML = "Click me";
+document.body.appendChild(button);
+// remove read-only
 function removeReadOnly() {
-    // Lấy tất cả các phần tử có class là read-only
-    var readOnly = document.getElementsByClassName("read-only");
-    // Lấy số lượng phần tử có class là read-only
-    var readOnlyLength = readOnly.length;
-    // Duyệt qua tất cả các phần tử có class là read-only
-    for (var i = 0; i < readOnlyLength; i++) {
-        // Xoá class read-only
-        readOnly[i].classList.remove("read-only");
+    const readOnly = document.getElementsByClassName("read-only");
+    for (let i = 0; i < readOnly.length; i++) {
+        readOnly[i].remove();
     }
 }
-// Thêm nội dung cho button
-btn.innerHTML = "Click me";
-// Thêm button vào body
-document.body.appendChild(btn);
-// Khi click thì chạy function removeReadOnly
-btn.addEventListener('click', removeReadOnly);
-
+// add event listener
+button.addEventListener("click", removeReadOnly);
 
